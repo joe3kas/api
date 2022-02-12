@@ -10,6 +10,7 @@ module.exports = {
     slider: './frontend/appSlider.js',
     docente: './frontend/appDocente.js',
     noticia: './frontend/appNoticia.js',
+    proyecto: './frontend/appProyecto.js',
     galeria: './frontend/appGaleria.js',
     cuadro: './frontend/appCuadro.js',
     user: './frontend/appUser.js'
@@ -87,6 +88,19 @@ module.exports = {
       filename: 'noticia.html',
       template: './frontend/noticia.html',
       chunks: ['noticia'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'proyecto.html',
+      template: './frontend/proyecto.html',
+      chunks: ['proyecto'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,
