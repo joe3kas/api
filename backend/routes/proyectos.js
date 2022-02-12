@@ -12,9 +12,13 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { titulo, descripcion,descripcion1,descripcion2,descripcion3 } = req.body;
-    const image = '/uploads/' + req.file.filename;
-    const Proyecto = new Proyecto({titulo, descripcion, descripcion,descripcion1,descripcion2,descripcion3, image});
+    const { titulo, descripcion,descripcion1,descripcion2,descripcion3,descripcion4,descripcion5 } = req.body;
+    const image1 = '/uploads/' + req.file.filename;
+    const image2 = '/uploads/' + req.file.filename;
+    const image3 = '/uploads/' + req.file.filename;
+    const image4 = '/uploads/' + req.file.filename;
+    const image5 = '/uploads/' + req.file.filename;
+    const Proyecto = new Proyecto({titulo, descripcion, descripcion,descripcion1,descripcion2,descripcion3,descripcion4, descripcion5, image1, image2, image3,image4, image5});
     console.log(newProyecto)
     await Proyecto.save();
     res.json({'message': 'Proyecto Guardado'});

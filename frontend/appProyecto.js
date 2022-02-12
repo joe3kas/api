@@ -1,7 +1,7 @@
 import "./styles/app.css";
 
 import Proyecto from './models/Proyecto.js';
-import UI from './Interfaz/Proyecto';
+import UI from './Interfaz/UIProyecto';
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI();
@@ -64,7 +64,7 @@ document.getElementById('proyecto-form')
     e.preventDefault();
   });
 
-document.getElementById('proyectos-cards')
+document.getElementById('proyecto-cards')
   .addEventListener('click', e => {
     const ui = new UI();
     if (e.target.classList.contains('delete')) {
