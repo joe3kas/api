@@ -8,9 +8,9 @@ module.exports = {
   entry: { 
     book: './frontend/appBook.js',
     slider: './frontend/appSlider.js',
+    proyecto: './frontend/appProyecto.js',
     docente: './frontend/appDocente.js',
     noticia: './frontend/appNoticia.js',
-    proyecto: './frontend/appProyecto.js',
     galeria: './frontend/appGaleria.js',
     cuadro: './frontend/appCuadro.js',
     user: './frontend/appUser.js'
@@ -72,6 +72,19 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
+      filename: 'proyecto.html',
+      template: './frontend/proyecto.html',
+      chunks: ['proyecto'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
+    new HtmlWebpackPlugin({
       filename: 'docente.html',
       template: './frontend/docente.html',
       chunks: ['docente'],
@@ -88,19 +101,6 @@ module.exports = {
       filename: 'noticia.html',
       template: './frontend/noticia.html',
       chunks: ['noticia'],
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'proyecto.html',
-      template: './frontend/proyecto.html',
-      chunks: ['proyecto'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,

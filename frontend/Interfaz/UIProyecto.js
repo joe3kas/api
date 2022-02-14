@@ -16,29 +16,21 @@ class UI {
       <div class="card m-2">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="${proyecto.image1}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-4">
-                <img src="${proyecto.image2}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-4">
-                <img src="${proyecto.image3}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-4">
-                <img src="${proyecto.image4}" class="img-fluid" alt="">
-            </div>
-            <div class="col-md-4">
-                <img src="${proyecto.image5}" class="img-fluid" alt="">
+                <img src="http://localhost:4000${proyecto.image}" class="img-fluid" alt="">
             </div>
             <div class="col-md-8">
                 <div class="card-block px-2">
-                    <h4 class="card-title">${proyecto.titulo}</h4>
-                    <p class="card-text">${proyecto.descripcion}</p>
+                    <h4 class="card-title">${proyecto.nombre}</h4>
                     <p class="card-text">${proyecto.descripcion1}</p>
                     <p class="card-text">${proyecto.descripcion2}</p>
                     <p class="card-text">${proyecto.descripcion3}</p>
                     <p class="card-text">${proyecto.descripcion4}</p>
                     <p class="card-text">${proyecto.descripcion5}</p>
+                    <p class="card-text">${proyecto.descripcion6}</p>
+                    <p class="card-text">${proyecto.descripcion7}</p>
+                    <p class="card-text">${proyecto.descripcion8}</p>
+                    <p class="card-text">${proyecto.descripcion9}</p>
+                    <p class="card-text">${proyecto.descripcion10}</p>
                     <a href="#" class="btn btn-danger delete" _id="${proyecto._id}">X</a>
                 </div>
             </div>
@@ -54,13 +46,13 @@ class UI {
 
   async addANewProyecto(proyecto) {
     await proyectoService.postProyecto(proyecto);
-    this.renderProyecto();
+    this.renderProyectos();
     this.clearProyectoForm();
   }
 
   clearProyectoForm() {
     document.getElementById('proyecto-form').reset();
-    document.getElementById('titulo').focus();
+    document.getElementById('nombre').focus();
   }
 
   renderMessage(message, colorMessage, secondsToRemove) {

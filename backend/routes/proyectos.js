@@ -12,22 +12,18 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { titulo, descripcion,descripcion1,descripcion2,descripcion3,descripcion4,descripcion5 } = req.body;
-    const image1 = '/uploads/' + req.file.filename;
-    const image2 = '/uploads/' + req.file.filename;
-    const image3 = '/uploads/' + req.file.filename;
-    const image4 = '/uploads/' + req.file.filename;
-    const image5 = '/uploads/' + req.file.filename;
-    const Proyecto = new Proyecto({titulo, descripcion, descripcion,descripcion1,descripcion2,descripcion3,descripcion4, descripcion5, image1, image2, image3,image4, image5});
+    const { nombre, descripcion1, descripcion2, descripcion3, descripcion4, descripcion5, descripcion6, descripcion7, descripcion8, descripcion9, descripcion10 } = req.body;
+    const image = '/uploads/' + req.file.filename;
+    const newProyecto = new Proyecto({ nombre, descripcion1, descripcion2, descripcion3, descripcion4, descripcion5, descripcion6, descripcion7, descripcion8, descripcion9, descripcion10, image });
     console.log(newProyecto)
-    await Proyecto.save();
-    res.json({'message': 'Proyecto Guardado'});
+    await newProyecto.save();
+    res.json({ 'message': 'Proyecto Agregado' });
 });
 
 router.delete('/:id', async (req, res) => {
     const proyecto = await Proyecto.findByIdAndDelete(req.params.id);
     await unlink(path.resolve('./backend/public/' + proyecto.image));
-    res.json({message: 'Proyecto Elimindado'});
+    res.json({ message: 'proyecto Eliminado' });
 });
 
 

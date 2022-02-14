@@ -16,7 +16,7 @@ class UI {
       <div class="card m-2">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="${book.image}" class="img-fluid" alt="">
+                <img src="http://localhost:4000${book.image}" class="img-fluid" alt="">
             </div>
             <div class="col-md-8">
                 <div class="card-block px-2">

@@ -1,10 +1,10 @@
 class ProyectoService {
 
     constructor() {
-        this.URI = `/api/v2/proyecto`;
+        this.URI = `http://localhost:4000/api/v2/proyecto`;
     }
 
-    async getProyecto() {
+    async getProyectos() {
         const response = await fetch(this.URI);    
         const proyectos = await response.json();
         return proyectos;
