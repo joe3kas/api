@@ -1,7 +1,7 @@
 class ProyectoService {
 
     constructor() {
-        this.URI = `http://localhost:4000/api/v2/proyecto`;
+        this.URI = `/api/v2/proyecto`;
     }
 
     async getProyectos() {
